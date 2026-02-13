@@ -1,0 +1,130 @@
+PROMPT
+
+Build a frontend-only interactive Valentine-themed website using only HTML, CSS, and JavaScript (no backend, no database, no authentication, no payments).
+
+The project must be a single-page application with multiple screens shown/hidden using JavaScript.
+
+General requirements:
+
+Mobile-first responsive design
+
+Soft romantic color palette (pink/red gradients)
+
+Smooth transitions and animations
+
+Clean modern typography
+
+No frameworks required (pure vanilla JS)
+
+All logic must run entirely in the browser
+
+App Flow:
+
+Start Screen:
+
+Full-screen romantic background
+
+Large centered text: “Will you be my Valentine?”
+
+Two buttons: YES and NO
+
+If NO is clicked:
+
+Navigate to a heartbreak-themed screen
+
+Show sad/heartbroken quotes that automatically change every 2 seconds
+
+Include two buttons:
+
+“Sad Poems”
+
+“Sad Messages”
+
+When either is selected, show a page that displays multiple heartbreak poems/messages one at a time
+
+Content automatically changes every 2 seconds
+
+Include “Next” and “Back” buttons for manual navigation
+
+Include a “Play Song” button that redirects to:
+https://youtu.be/3JWTaaS7LdU?list=RD3JWTaaS7LdU
+
+If YES is clicked:
+
+Navigate to a love-themed selection screen
+
+Two options:
+
+Love Poems
+
+Love Messages
+
+When selected, show a page with romantic poems/messages
+
+Display content one at a time
+
+Automatically change quotes every 2 seconds
+
+Include “Next” and “Back” buttons
+
+Include a “Play Song” button that redirects to:
+https://youtu.be/asZm5gHknmU?list=RDasZm5gHknmU
+
+Content behavior:
+
+Each poem/message must be unique
+
+Store all poems/messages inside JavaScript arrays
+
+Randomize or cycle through items
+
+Use smooth fade or slide transitions
+
+UI/UX:
+
+Soft animations
+
+Rounded buttons
+
+Floating hearts or subtle effects
+
+Centered layout
+
+Fullscreen sections
+
+Fun, cute, romantic feeling
+
+Footer:
+
+Always visible at the bottom
+
+Text: “Designed by ANTHONY DERC”
+
+Technical constraints:
+
+No backend
+
+No APIs
+
+No databases
+
+No user inputs or personalization
+
+Static content only
+
+Must work offline once loaded
+
+Must run by simply opening index.html
+
+Deliverables:
+
+index.html
+
+styles included or embedded
+
+JavaScript included or embedded
+
+Fully functional without installation
+
+Goal:
+Create a sweet, adorable, interactive romantic experience that feels playful and emotional, purely client-side.

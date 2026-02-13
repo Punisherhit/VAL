@@ -1,0 +1,117 @@
+
+import { useState } from "react";
+import { Link } from "wouter";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, CloudRain, MessageSquareDashed, BookOpenCheck } from "lucide-react";
+import { FloatingHearts } from "@/components/FloatingHearts";
+import { MusicPlayer } from "@/components/MusicPlayer";
+import { useRotator } from "@/hooks/useRotator";
+
+export default function HeartbreakScreen() {
+  const [activeTab, setActiveTab] = useState<'poems' | 'messages'>('messages');
+  const { current: message, index } = useRotator(activeTab === 'poems' ? 'sad-poems' : 'sad-messages');
+
+  return (
+    <div className="min-h-screen bg-slate-100 flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      <FloatingHearts mood="sad" />
+
+      {/* Rain overlay effect using CSS or simple elements could go here, but keeping it clean */}
+
+      <div className="absolute top-6 left-6 z-20">
+        <Link href="/" className="
+          p-3 rounded-full bg-white/80 hover:bg-white shadow-md text-slate-600 hover:text-slate-900
+          transition-all duration-300 flex items-center gap-2 font-bold
+        ">
+          <ArrowLeft size={20} />
+          <span className="hidden sm:inline">Try Again?</span>
+        </Link>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="w-full max-w-4xl z-10 flex flex-col items-center"
+      >
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          className="mb-6"
+        >
+          <CloudRain className="w-20 h-20 text-slate-400" />
+        </motion.div>
+
+        <h1 className="text-4xl md:text-6xl font-display text-slate-600 mb-2 text-center">
+          Oh... I understand.
+        </h1>
+        <p className="text-lg text-slate-400 font-body mb-12 text-center max-w-md">
+          It's okay. Sometimes timing just isn't right. I'll just sit here with my thoughts.
+        </p>
+
+        {/* Tab Switcher */}
+        <div className="flex gap-4 mb-8 bg-slate-200/50 p-2 rounded-full backdrop-blur-sm">
+          <button
+            onClick={() => setActiveTab('messages')}
+            className={`
+              px-6 py-2 rounded-full font-bold transition-all duration-300 flex items-center gap-2
+              ${activeTab === 'messages' 
+                ? 'bg-slate-500 text-white shadow-lg shadow-slate-500/25' 
+                : 'text-slate-500 hover:bg-white/50'}
+            `}
+          >
+            <MessageSquareDashed size={18} />
+            Sad Thoughts
+          </button>
+          <button
+            onClick={() => setActiveTab('poems')}
+            className={`
+              px-6 py-2 rounded-full font-bold transition-all duration-300 flex items-center gap-2
+              ${activeTab === 'poems' 
+                ? 'bg-slate-500 text-white shadow-lg shadow-slate-500/25' 
+                : 'text-slate-500 hover:bg-white/50'}
+            `}
+          >
+            <BookOpenCheck size={18} />
+            Sad Poems
+          </button>
+        </div>
+
+        {/* Content Card */}
+        <div className="w-full max-w-2xl h-64 md:h-80 relative mb-12">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${activeTab}-${index}`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.5 }}
+              className="
+                absolute inset-0 bg-white/80 backdrop-blur-sm rounded-3xl
+                flex items-center justify-center p-8 md:p-12 text-center
+                flex-col gap-4 shadow-xl shadow-slate-300/50 border border-slate-200
+              "
+            >
+              <p className={`
+                text-xl md:text-3xl text-slate-700 leading-relaxed
+                ${activeTab === 'poems' ? 'font-handwriting italic' : 'font-body font-medium'}
+              `}>
+                "{message}"
+              </p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
+        <MusicPlayer 
+          url="https://youtu.be/3JWTaaS7LdU?list=RD3JWTaaS7LdU" 
+          label="Play Sad Song" 
+        />
+      </motion.div>
+
+      <div className="mt-auto pb-4 flex flex-col items-center gap-2 z-10">
+        <footer className="text-center text-slate-400 font-mono text-xs">
+          Designed with 💔 by ANTHONY DERC
+        </footer>
+      </div>
+    </div>
+  );
+}
+

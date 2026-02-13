@@ -1,0 +1,50 @@
+// Memory data interface
+export interface Memory {
+  id: number;
+  imageUrl: string;
+  caption: string;
+  date: string;
+}
+
+// Add your images to client/public/images/ folder
+// Then update the imageUrl paths below
+
+export const MEMORIES: Memory[] = [
+  {
+    id: 1,
+    imageUrl: "/images/memory-1.jpg",
+    caption: "Our first date ❤️",
+    date: "2024-01-15"
+  },
+  {
+    id: 2,
+    imageUrl: "/images/memory-2.jpg",
+    caption: "Beach day together 🌊",
+    date: "2024-02-20"
+  },
+  {
+    id: 3,
+    imageUrl: "/images/memory-3.jpg",
+    caption: "Movie night 🍿",
+    date: "2024-03-10"
+  },
+  {
+    id: 4,
+    imageUrl: "/images/memory-4.jpg",
+    caption: "Birthday celebration 🎂",
+    date: "2024-04-05"
+  },
+  {
+    id: 5,
+    imageUrl: "/images/memory-5.jpg",
+    caption: "Anniversary dinner 💕",
+    date: "2024-05-20"
+  },
+  {
+    id: 6,
+    imageUrl: "/images/memory-6.jpg",
+    caption: "Rainy day cuddles ☔",
+    date: "2024-06-15"
+  }
+];
+
