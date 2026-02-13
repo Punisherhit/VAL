@@ -13,13 +13,13 @@ export const MEMORIES: Memory[] = [
   {
     id: 1,
     imageUrl: "/images/memory-1.jpg",
-    caption: "Our first meet ❤️",
+    caption: "You created this using ChatGPT ❤️",
     date: "2024-07-07"
   },
   {
     id: 2,
     imageUrl: "/images/memory-2.jpg",
-    caption: "Beach day together 🌊",
+    caption: "What a beautiful smile 🌊",
     date: "2024-07-07"
   },
   {
@@ -37,31 +37,31 @@ export const MEMORIES: Memory[] = [
   {
     id: 5,
     imageUrl: "/images/memory-5.jpg",
-    caption: "Our first shoot 💕",
+    caption: "Kinda off a beach day i really enjoyed your company 💕",
     date: "2024-07-07"
   },
   {
     id: 6,
     imageUrl: "/images/memory-6.jpg",
-    caption: "With your son Zzero ☔",
+    caption: "Random snaps ☔",
     date: "2024-07-07"
   },
   {
     id: 7,
     imageUrl: "/images/memory-7.jpg",
-    caption: "Talking shit about people 🚗",
+    caption: "Some day one pic's that you.....🚗",
     date: "2024-07-08"
   },
   {
     id: 8,
     imageUrl: "/images/memory-8.jpg",
-    caption: "More photos and bonding🍳",
+    caption: "This picture is still killing me 🍳",
     date: "2024-08-12"
   },
   {
     id: 9,
     imageUrl: "/images/memory-9.jpg",
-    caption: "A boring and a funny day ⭐",
+    caption: "Still in love with that smile ⭐",
     date: "2024-08-24"
   } 
 ];
